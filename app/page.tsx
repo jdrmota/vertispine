@@ -45,8 +45,9 @@ export default function Home() {
     setpelvic_radiusTXT(pelvic_radius);
     setdegree_spondylolisthesisTXT(degree_spondylolisthesis);
 
-    const fetUrl = '/api/python?pelvic_incidence=' + encodeURIComponent(pelvic_incidence) + '&pelvic_tilt=' + encodeURIComponent(pelvic_tilt) + '&lumbar_lordosis_angle=' + encodeURIComponent(lumbar_lordosis_angle) + '&sacral_slope=' + encodeURIComponent(sacral_slope) + '&pelvic_radius=' + encodeURIComponent(pelvic_radius) + '&degree_spondylolisthesis=' + encodeURIComponent(degree_spondylolisthesis);
+    const fetUrl = 'http://159.65.61.32/?pelvic_incidence=' + encodeURIComponent(pelvic_incidence) + '&pelvic_tilt=' + encodeURIComponent(pelvic_tilt) + '&lumbar_lordosis_angle=' + encodeURIComponent(lumbar_lordosis_angle) + '&sacral_slope=' + encodeURIComponent(sacral_slope) + '&pelvic_radius=' + encodeURIComponent(pelvic_radius) + '&degree_spondylolisthesis=' + encodeURIComponent(degree_spondylolisthesis);
 
+    /*/api/python? --- commented out in next.config.ts*/
     console.log(fetUrl);
 
     fetch(fetUrl).then(response => {
