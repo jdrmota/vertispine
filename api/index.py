@@ -20,7 +20,7 @@ model = load(model_path)
 
 app = Flask(__name__)
 
-@app.route("/api/python") #, methods=['GET']
+@app.route("/api/python", methods=['GET']) #, methods=['GET']
 def hello_world():
     
     d = {'pelvic_incidence': [], 'pelvic_tilt': [], 'lumbar_lordosis_angle': [], 'sacral_slope': [], 'pelvic_radius': [], 'degree_spondylolisthesis': []}
@@ -46,3 +46,6 @@ def hello_world():
     
     #return {"pelvic_incidence": pelvic_incidence, "pelvic_tilt": pelvic_tilt, "lumbar_lordosis_angle": lumbar_lordosis_angle, "sacral_slope": sacral_slope, "pelvic_radius": pelvic_radius, "degree_spondylolisthesis": degree_spondylolisthesis}
     return jsonify({'prediction': prediction_list})
+
+if __name__ == '__main__':
+    app.run(debug=True)
