@@ -17,17 +17,26 @@ export default function Home() {
   const [pelvic_radiusTXT, setpelvic_radiusTXT] = useState("");
   const [degree_spondylolisthesisTXT, setdegree_spondylolisthesisTXT] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
     setShowOutput(false);
     event.preventDefault()
 
-    const pelvic_incidence = event.target.elements.pelvic_incidence.value;
+    const form = event.target as HTMLFormElement; // Cast event.target to HTMLFormElement
+
+    const pelvic_incidence = (form.elements.namedItem('pelvic_incidence') as HTMLInputElement).value;
+    const pelvic_tilt = (form.elements.namedItem('pelvic_tilt') as HTMLInputElement).value;
+    const lumbar_lordosis_angle = (form.elements.namedItem('lumbar_lordosis_angle') as HTMLInputElement).value;
+    const sacral_slope = (form.elements.namedItem('sacral_slope') as HTMLInputElement).value;
+    const pelvic_radius = (form.elements.namedItem('pelvic_radius') as HTMLInputElement).value;
+    const degree_spondylolisthesis = (form.elements.namedItem('degree_spondylolisthesis') as HTMLInputElement).value;
+
+    /*const pelvic_incidence = event.target.elements.pelvic_incidence.value;
     const pelvic_tilt = event.target.elements.pelvic_tilt.value;
     const lumbar_lordosis_angle = event.target.elements.lumbar_lordosis_angle.value;
     const sacral_slope = event.target.elements.sacral_slope.value;
     const pelvic_radius = event.target.elements.pelvic_radius.value;
-    const degree_spondylolisthesis = event.target.elements.degree_spondylolisthesis.value;
+    const degree_spondylolisthesis = event.target.elements.degree_spondylolisthesis.value;*/
 
     setpelvic_incidenceTXT(pelvic_incidence);
     setpelvic_tiltTXT(pelvic_tilt);
@@ -204,7 +213,7 @@ export default function Home() {
               </code>
             </div>
 
-            <p className="my-2">Algorithm accuracy: </p>
+            <p className="my-2">Algorithm accuracy: 79.03%</p>
           </div>
         ) : (
           <></>
