@@ -2,19 +2,7 @@ from flask import Flask
 from flask import request, jsonify
 import pandas as pd
 import os
-from scipy.io import arff
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-import matplotlib.pyplot as plt
-from sklearn.model_selection import KFold
-from sklearn.model_selection import GridSearchCV
-
-from joblib import Parallel, delayed 
 from joblib import load
-
-import json
 
 # Get the absolute path of the current directory
 base_dir = os.path.dirname(os.path.abspath(__file__))
