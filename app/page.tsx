@@ -98,7 +98,7 @@ export default function Home() {
 
       <div className="relative place-items-center w-full max-w-5xl m-10">
         <div>
-          <p className="my-5">This is a simulated application illustrating the use of a 3 class machine learning classification algorithm in the orthopaedics outpatient clinical setting, submitted to the BOA x Stryker AI in Orthopaedics Hackathon 2024.</p>
+          <p className="my-5">This is a simulated application illustrating the use of a 3 target machine learning classification algorithm in the orthopaedics outpatient clinical setting, submitted to the BOA x Stryker AI in Orthopaedics Hackathon 2024.</p>
           <div className="flex items-center justify-center">
             <div className="cursor-pointer justify-center rounded bg-zinc-800/30 p-3 m-3">
               <Link href="/vertispine.pdf" target="_blank" rel='noopener noreferrer'>
